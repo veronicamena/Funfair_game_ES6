@@ -1,0 +1,556 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+hr {
+  width: 100%;
+  border-bottom: 1px dashed rgba(0,0,0,.3);
+  margin: 10px 0;
+  border-top: none;
+}
+
+body {
+    font-family: arial;
+    font-size: 14px;
+    margin: 0 auto;
+    min-height: 96vh;
+    width: 100%;
+    font-family: Helvetica;
+    background: url('../img/back.jpg') no-repeat center / cover;
+}
+
+.nuevoEdificio, .actualizarEdificio, .mercado {
+    background: white
+}
+
+header {
+    background: rgba(0, 0, 0, 0) url("../img/sprite-a.png") repeat-x scroll 0 0;
+    height: 87px;
+}
+header img{
+    margin-left: calc(50% - 100px);
+    width: 200px;
+}
+
+p {
+  font-family: Helvetica;
+  margin: 12px 0;
+}
+
+*{
+  margin:0;
+  padding:0;
+}
+
+.panel * {
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+}
+
+.panel h1 {
+  padding-top: 30px
+}
+
+.panelPrincipal .controles {
+  padding-top: 15px;
+  overflow: auto;
+  background: rgba(255,255,255,.8);
+  margin-bottom: 15px;
+  border-bottom: 1px solid grey;
+  box-shadow: 10px 6px 5px rgba(0,0,0,.2);
+}
+
+.panelPrincipal .controles img {
+  height: 115px;
+  display: block;
+  margin: 0 auto;
+}
+
+.panelPrincipal .controles section {
+  padding: 5px 20px;
+  margin-bottom: 10px;
+  float: left;
+  border-left: 1px dashed rgba(0,0,0,.5);
+  position: relative;
+}
+.panelPrincipal .controles section:first-of-type {
+  width: auto;
+}
+
+.panelPrincipal button, .panel a {
+  display: block;
+  float: none;
+  font-size: 12px;
+  width: 100%;
+  border: medium none;
+  color: inherit;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: 7px 0px;
+  outline: medium none;
+  padding: 6px 39px;
+  position: relative;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  border: 3px solid #ca6c38;
+  color: white;
+}
+
+.panelPrincipal button:first-of-type{
+  margin-top: 0
+}
+
+#contadorEdificios::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: url('../img/edificios.png') no-repeat center / contain;
+  position: absolute;
+  left: -26px;
+  top: -2px;
+}
+
+#contadorRecaudacion::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: url('../img/entradas.png') no-repeat center / contain;
+  position: absolute;
+  left: -26px;
+  top: -2px;
+}
+
+#contadorVisitantes::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: url('../img/habitantes.png') no-repeat center / contain;
+  position: absolute;
+  left: -26px;
+  top: -2px;
+}
+
+#contadorUnidades::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: url('../img/unidades.png') no-repeat center / contain;
+  position: absolute;
+  left: -26px;
+  top: -2px;
+}
+
+#contadorSaldoActual {
+  position: absolute;
+  left: 3px;
+  top: -6px;
+  background: gold;
+  padding: 3px 13px;
+  border-radius: 21px;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+#recaudarCaja {
+  background: none;
+  color: black;
+  width: auto;
+  padding: 5px 12px;
+  float: right;
+  margin-top: -11px;
+  border: 1px solid black;
+  border-radius: 3px;
+  font-size: 10px;
+  background: rgb(248,248,248);
+}
+
+.panelPrincipal section:nth-child(3) img {
+  height: 84px;
+  margin-top: 3px;
+}
+.panelPrincipal section:nth-child(4) p {
+  position: relative;
+  left: 24px;
+}
+
+.mapa {
+  width: 900px;
+  background: url('../img/mapa.jpg') no-repeat center / contain;
+  height: 477px;
+  margin: 0px auto;
+  box-shadow:  0 0 1em white
+}
+
+
+
+
+.mapa > div {
+  float: left;
+  width: 12.5%;
+  height: 20%;
+  border-left: 1px dashed transparent;
+  border-bottom: 1px dashed transparent;
+  box-sizing: border-box;
+  position: relative;
+}
+
+
+.mapa > div[data-celda] {
+  border-top: 1px dashed rgba(0,0,0,.3);
+  border-left: 1px dashed rgba(0,0,0,.3);
+  border-bottom: 1px dashed rgba(0,0,0,.3);
+  border-right: 1px dashed rgba(0,0,0,.3);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all .2s;
+  cursor: pointer;
+}
+
+.mapa > div[data-celda]:hover {
+  transform: scale(1.05);
+  background-color: rgba(255,255,255,.3)
+}
+
+div[data-celda="01"],div[data-celda="03"],div[data-celda="04"],div[data-celda="05"],div[data-celda="06"] {
+  border-bottom: 1px dashed transparent !important
+}
+
+div[data-celda="02"],div[data-celda="03"],div[data-celda="06"],div[data-celda="08"],div[data-celda="09"],div[data-celda="10"],div[data-celda="11"]{
+  border-right: 1px dashed transparent !important
+}
+
+.mapa > div::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.mapa > div[data-edificio="vacia"]::before {
+  background-image: url('../img/vacia.png');
+  background-position: center;
+}
+
+
+.mapa > div[data-edificio="noria"]::before {
+  background-image: url('../img/noria.png');
+  background-position: center;
+  height: 125%;
+}
+
+
+.mapa > div[data-edificio="looping"]::before {
+  background-image: url('../img/looping.png');
+  height: 125%;
+  background-position: center;
+}
+
+.mapa > div[data-edificio="troncos"]::before {
+  background-image: url('../img/troncos.png');
+  height: 125%;
+  background-position: center;
+}
+
+.mapa > div[data-edificio="rusa"]::before {
+  background-image: url('../img/rusa.png');
+  background-position: center;
+  width: 140%;
+  height: 140%;
+  bottom: -20%;
+  left: -20%;
+}
+
+
+.mapa > div[data-edificio="cafe"]::before {
+  background-image: url('../img/cafe.png');
+  background-position: center;
+  height: 140%;
+  width: 140%;
+  left: -20%;
+  bottom: -20%;
+}
+
+
+.mapa > div[data-edificio="hamburguesas"]::before {
+  background-image: url('../img/hamburguesas.png');
+  background-position: center;
+  height: 120%;
+  width: 120%;
+  left: -10%;
+  bottom: -6px;
+}
+
+.mapa > div[data-edificio="refrescos"]::before {
+  background-image: url('../img/refrescos.png');
+  background-position: center;
+  height: 140%;
+  width: 140%;
+  left: -20%;
+  bottom: -20%;
+}
+
+
+.mapa > div[data-edificio="asiatico"]::before {
+  background-image: url('../img/asiatico.png');
+  background-position: center;
+  height: 140%;
+  width: 140%;
+  left: -20%;
+  bottom: -20%;
+}
+
+
+.mapa > div[data-edificio="auditorio"]::before {
+  background-image: url('../img/auditorio.png');
+  background-position: center;
+  height: 140%;
+  width: 140%;
+  left: -20%;
+  bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.panel p {
+  padding-bottom: 20px;
+  margin: 20px 0;
+  border-bottom: 1px solid grey;
+}
+
+
+button,input[type='submit'],.panel a {
+    width:calc(33% - 47px);
+    float:left;
+    overflow: auto;
+    background: #ca6c38 none repeat scroll 0 0;
+    border: medium none;
+    color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 15px 20px;
+    outline: medium none;
+    padding: 15px 0px;
+    position: relative;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    border: 3px solid #ca6c38;
+    color: white;
+}
+
+button:hover,.panel a:hover{
+    background-color: #ffccb0;
+    color: #ca6c38;
+}
+
+.panel button, .panel a, .panel input[type="submit"]{
+    display: block;
+    float: none;
+    font-weight: 300;
+    margin: 10px auto;
+    padding: 12px 0;
+    width: 90%;
+}
+
+.panel a {
+  text-align: center;
+  width: 400px;
+  text-decoration: none;
+}
+
+form {
+    margin: 24px auto 0;
+    width: calc(100% - 40px);
+    font-family: arial;
+}
+
+fieldset{
+    border: 2px solid #ca6c38;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: rgba(255,255,255,.9);
+}
+
+legend{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+form label:nth-child(22),form label:nth-child(23),form label:nth-child(24),form label:nth-child(25){
+  display: block;
+  margin-left: 31%;
+}
+
+input[type="text"], input[type="date"], input[type="password"], input[type="number"], input[type="range"], select {
+  border: 1px solid #ca6c38;
+  float: right;
+  width: 50%;
+  padding: 5px;
+}
+
+input[type="radio"]:first-of-type,input[type="checkbox"] {
+    margin-left: 27%;
+}
+
+input[type="radio"]{
+    margin: 0 5px;
+}
+
+#errores{
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+#mensajes,#textoResultado{
+    background-color: rgba(0,255,0,.5);
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nuevoEdificio figure {
+  float: left;
+  width: calc(33.33% - 40px);
+  height: auto;
+  font-size: 10px;
+  margin: 0 14px 25px 14px !important;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,.3);
+  padding: 5px;
+}
+
+.nuevoEdificio [data-tipo="atraccion"]::before {
+  content: "Atracción";
+  width: 100%;
+  text-align: center;
+  display: block;
+  text-transform: uppercase;
+  opacity: .5;
+  padding-bottom: 2px;
+  border-bottom: 1px dashed;
+  font-size: 8px;
+}
+
+.nuevoEdificio [data-tipo="puesto"]::before {
+  content: "Puesto";
+  width: 100%;
+  text-align: center;
+  display: block;
+  text-transform: uppercase;
+  opacity: .5;
+  padding-bottom: 2px;
+  border-bottom: 1px dashed;
+  font-size: 8px;
+}
+
+.nuevoEdificio figure:hover img{
+  transform: scale(1.05);
+}
+
+.nuevoEdificio figcaption {
+text-align: center;
+margin: 0 !important;
+font-weight: 800
+}
+
+.nuevoEdificio figcaption span {
+  margin: 0 !important;
+  display: block;
+  width: 100%;
+  font-weight: normal;
+  position: relative;
+}
+
+.nuevoEdificio [data-tipo="atraccion"] span::after {
+  content: "";
+  width: 11px;
+  height: 16px;
+  background: url('../img/habitantes.png') no-repeat center / contain;
+  position: absolute;
+  right: 18px;
+  top: -2px;
+}
+
+.nuevoEdificio [data-tipo="puesto"] span::after {
+  content: "";
+  width: 15px;
+  height: 16px;
+  background: url('../img/cash.png') no-repeat center / contain;
+  position: absolute;
+  right: 18px;
+  top: -3px;
+}
+
+.nuevoEdificio img {
+  width: 100%;
+  margin: 0 !important;
+  transition: all .5s;
+
+}
+
+.nuevoEdificio button {
+  float: right;
+  width: 35%;
+  font-size: 11px;
+}
+
+.nuevoEdificio button:first-of-type{
+  float: left;
+  width: 35%;
+}
+
+#alerta{
+    border-top: 1px solid grey;
+    bottom: 0;
+    font-weight: bold;
+    left: 0;
+    margin: 0 !important;
+    position: fixed;
+    text-align: center;
+    transform: translateY(100%);
+    width: 100%;
+    transition: all .3s ease-in;
+    padding:20px 0;
+}
+
+#alerta[data-tipo="error"]{
+    background: #F78181;
+}
+
+#alerta[data-tipo="success"]{
+    background: #81F79F;
+}
+
+#alerta[data-tipo="warning"]{
+    background: #D8F781;
+}
+
+#alerta.activa{
+    transform: translateY(0);
+}
+
+#nuevoSorteo {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 200px;
+}

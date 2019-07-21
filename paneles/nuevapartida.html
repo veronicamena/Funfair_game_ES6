@@ -1,0 +1,86 @@
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Nueva partida</title>
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+	</head>
+
+    <body class="panel">
+
+		<form action="gestordedatos.php" method="POST">
+
+			<fieldset>
+
+				<legend>Registrar nueva partida</legend>
+
+				<p>Indica aquí los detalles que serán asociados a tu cuenta</p>
+				<br>
+
+				<label>Nombre de usuario
+					<input type="text" id="campoNombre" value="VERONICA">
+				</label>
+				<br><br>
+
+				<label>Contraseña
+					<input type="password" id="campoPwd1" value="Qwerty1">
+				</label>
+				<br><br>
+
+				<label>Repite la contraseña
+					<input type="password" id="campoPwd2" value="Qwerty1">
+				</label>
+				<br><br>
+
+				<label>Email
+					<input type="text" id="campoEmail" value="hsgusg@msn.es">
+				</label>
+				<br><br>
+
+				<label>DNI
+					<input type="text" id="campoDNI" value="53500000L">
+				</label>
+				<br><br>
+
+				<label>Fecha de nacimiento
+					<input type="text" id="campoFecha" value="25/05/1988">
+				</label>
+				<br><br>
+
+				País de residencia
+					<label><input type="radio" name="pais" value="ES" checked>España</label>
+					<label><input type="radio" name="pais" value="MX">Mexico</label>
+					<label><input type="radio" name="pais" value="AR">Argentina</label>
+					<label><input type="radio" name="pais" value="XX">Otro</label>
+				<br>
+
+				<label>Forma de pago preferente
+					<select id="listaPago">
+						<option>Seleccionar</option>
+						<option selected>Paypal</option>
+						<option>Tarjeta de crédito</option>
+						<option>Tarjeta de débito</option>
+					</select>
+				</label>
+				<br><br>
+
+				<small>
+					<input type="checkbox" id="checkCondiciones" checked> Acepto las condiciones del servicio
+				</small>
+				<br><br>
+
+			</fieldset>
+
+			<div id="errores"></div>
+
+		</form>
+
+		<button id="validarFormularioPartida">COMENZAR PARTIDA</button>
+
+		<div id="alerta"></div>
+
+		<script src="../js/comun.js"></script>
+		<script src="../js/nuevaPartida.js"></script>
+
+	</body>
+</html>

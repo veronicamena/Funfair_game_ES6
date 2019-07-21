@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="panelPrincipal">
+
+	<head>
+		<title>Hero City | Panel de juego</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+
+	<body>
+
+		<div class="controles">		
+
+			<section>
+				<img src="img/logo.png" alt="Logo">
+			</section>				
+
+			<section>
+				<p>¡Bienvenid@, <span id="nombreUsuario">invitado</span>!</p>
+				<p>Partida creada el <span id="fechaPartida">-</span></p>
+				<button id="nuevaPartida">Nueva partida</button>
+			</section>
+
+			<section>
+				<img src="img/caja.png" alt="caja">
+				<p id="contadorSaldoActual">0 $</p>
+				<button id="recaudarCaja">Recaudar entradas</button>
+			</section>
+
+			<section>
+				<h3>Stats</h3>
+				<p id="contadorEdificios">0 edificios</p>
+				<p id="contadorVisitantes">0 visitantes</p>
+				<p id="contadorRecaudacion">0$ en entradas</p>
+			</section>
+
+		</div>
+
+		<div class="mapa">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div class="celda" data-edificio="vacia" data-celda="01"></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div class="celda" data-edificio="vacia" data-celda="02"></div>
+			<div class="celda" data-edificio="vacia" data-celda="03"></div>
+			<div class="celda" data-edificio="vacia" data-celda="04"></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div class="celda" data-edificio="vacia" data-celda="05"></div>
+			<div></div>
+			<div class="celda" data-edificio="vacia" data-celda="06"></div>
+			<div class="celda" data-edificio="vacia" data-celda="07"></div>
+			<div></div>
+			<div></div>
+			<div class="celda" data-edificio="vacia" data-celda="08"></div>
+			<div class="celda" data-edificio="vacia" data-celda="09"></div>
+			<div class="celda" data-edificio="vacia" data-celda="10"></div>
+			<div class="celda" data-edificio="vacia" data-celda="11"></div>
+			<div class="celda" data-edificio="vacia" data-celda="12"></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>		
+
+		<div id="alerta"></div>
+
+		<button id="nuevoSorteo">Nuevo sorteo</button>
+				
+		<script src="js/comun.js"></script>
+		<script src="js/panelGeneral.js"></script>	
+
+	</body>
+
+</html>
